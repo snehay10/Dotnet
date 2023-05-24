@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data;
+using System.Data.SqlClient;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +22,17 @@ namespace LING_DEMO
             Console.ReadLine();
 
 
+            SqlConnection conn = new SqlConnection("integrated security:true;data source=DESKTOP-QNJIJNF\\SQLEXPRESS ;initial catelog=stud");
+            SqlDataAdapter adapter = new SqlDataAdapter("Select * from student",conn);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "student");
+            foreach (DataRow dr in ds.Tables["student"].Rows) 
+            {
+                Console.WriteLine("roll no :" + dr["rollno"]);
+                Console.WriteLine("name  :" + dr["nm"]);
+                Console.WriteLine("marks :" + dr["marks"]);
+            }
+            Console.ReadLine();
         }
     }
 }
