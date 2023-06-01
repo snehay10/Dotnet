@@ -10,6 +10,7 @@ namespace task
     {
         static void Main(string[] args)
         {
+<<<<<<< HEAD
             for (int i = 1; i <= 5; i++)
             {
                 for (int j = 0; j < i; j++)
@@ -45,5 +46,18 @@ namespace task
             }
         }
 
+=======
+           
+           taskp p= new taskp();
+            // p.showint();
+            // p.showstring();
+            //p.sshowpalFunctio();
+            //  p.pat();
+            // p.pat2();
+            p.pat3();
+            Console.ReadLine();
+
+        }
+>>>>>>> 6585a07 (1-6)
     }
 }
